@@ -1,0 +1,58 @@
+.timeForFlight {
+    width: 75.94px;
+    height: 26px;
+    color: #4a4a4a;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 32px;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 400;
+    line-height: 26px;
+    text-align: left;
+    text-transform: none;
+    letter-spacing: 0px;
+  }
+  .dateForFlight {
+    width: 115px;
+    height: 36px;
+    color: #4a4a4a;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 12px;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 400;
+    line-height: 18px;
+    text-align: left;
+    text-transform: none;
+    letter-spacing: 0px;
+  }
+  #blockForStops {
+    width: 68px;
+    height: 13px;
+    color: #8b9497;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 400;
+    line-height: 12.1px;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 0px;
+  }
+  #lineForStops {
+    border-radius: 0;
+    width: 96px;
+    height: 1px;
+    background: #d2d5d6;
+    color: #8b9497;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 10px;
+    font-style: normal;
+    font-stretch: normal;
+    font-weight: 400;
+    line-height: 12.1px;
+    text-align: center;
+    text-transform: none;
+    letter-spacing: 0px;
+  }
