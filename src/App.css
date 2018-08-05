@@ -2,3 +2,7 @@
     display: flex;
     flex-flow: row wrap;
 }
+.divForLogo {
+    display: flex;
+    justify-content: center;
+}
