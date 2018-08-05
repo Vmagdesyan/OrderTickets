@@ -1,7 +1,10 @@
-.FlightTable{
-    
+.FlightTable {
+    display: flex;
+    flex-direction: column;
 }
-
+.tableForTickets {
+  display: flex;
+}
 #logo {
     width: 120px;
     height: 35px;
@@ -18,7 +21,7 @@
     margin: 20px 10px 21px 20px;
 
   }
-  #buttonForBuy {
+  .buttonForBuy {
     border-radius: 5px;
     width: 160px;
     height: 56px;
@@ -34,6 +37,7 @@
     text-transform: none;
     letter-spacing: 0px;
     box-shadow: 0px 1px 0px #d64d08;
+    margin-top: 10px;
   }
 
   #textInButton {

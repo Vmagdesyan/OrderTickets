@@ -32,7 +32,7 @@ class App extends Component {
     }
   }
   handleChangeCurrency = (str) => {
-    if (!(str && this.state.allCurrency.includes(str)))
+    if (!(str && this.state.allCurrency.indexOf(str) !== -1))
       return;
     if (str === this.state.currency)
       return;
@@ -54,7 +54,7 @@ class App extends Component {
           checkedStops: [...this.state.checkedStops.filter(stop => stop !== -1  ), +stops]
         });
     }
-    else
+    else 
       this.setState({
         checkedStops: this.state.checkedStops.filter(stop => stop !== +stops && stop !== -1 )
       })
@@ -65,8 +65,6 @@ class App extends Component {
         <BlockForChangeCurrencyAndStops
           allCurrency={this.state.allCurrency}
           currCurrency={this.state.currency}
-          radioButtonClass='buttonForCurrency'
-          checkBoxButtonClass='buttonForStops'
           changeCurrency={this.handleChangeCurrency}
           maxStops={this.state.maxStops}
           checkedStops={this.state.checkedStops}
@@ -79,7 +77,6 @@ class App extends Component {
           checkedStops={this.state.checkedStops}
         />
       </div>
-      
     );
   }
 }

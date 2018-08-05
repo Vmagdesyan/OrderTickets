@@ -26,12 +26,7 @@ export default class InformationAboutFlight extends Component {
             departureTime,
             arrivalDate,
             arrivalTime,
-            stops,
-            classForTime,
-            classForInfAboutDate,
-            idForStops,
-            idForLine
-
+            stops
         } = this.props;
         const days = ["Вс", "Пн", "Вт", "Ср", "Чт", "Пт", "Сб"];
         const months = ["янв", "фев", "мар", "апр", "мая", "июн", 
@@ -39,38 +34,28 @@ export default class InformationAboutFlight extends Component {
         const dprDate = this.createDateFromString(departureDate);
         const arrDate = this.createDateFromString(arrivalDate);
         return (
-            <div>
-                <div>
-                    <div
-                        className={classForTime}
-                    >
-                        <a>
-                            {departureTime}
-                        </a>
+            <div className='InformationAboutFlight'>
+                <div className='divForDateAndTime'>
+                    <div className='timeForFlight'>
+                        <a>{departureTime}</a>
                     </div>
-                    <div
-                        className={classForInfAboutDate}
-                    >
+                    <div className='dateForFlight'>
                         <p>{`${origin}, ${originName}`}</p>
                         <p>{`${dprDate.getDate()} ${months[dprDate.getMonth()]} ${dprDate.getFullYear()}, ${days[dprDate.getDay()]}`}</p>
                     </div>
                 </div>
-                <div>
-                    <div
-                        id={idForStops}
-                    >
+                <div className='divForStops'>
+                    <div className='blockForStops'>
                         {this.getStops(stops)}
                     </div>
-                    <div>
-                        <div id={idForLine}></div>
-                        <div><img src={Airplane} alt='линия'/></div>
+                    <div className='divForLine'>
+                        <div className='lineForStops'></div>
+                        <div className='divForImg'><img src={Airplane} alt='линия'/></div>
                     </div>
                 </div>
-                <div>
-                    <div className={classForTime}> <a>{arrivalTime}</a> </div>
-                    <div
-                        className={classForInfAboutDate}
-                    >
+                <div className='divForDateAndTime'>
+                    <div className='timeForFlight'> <a>{arrivalTime}</a> </div>
+                    <div className='dateForFlight'>
                         <p>{`${destination}, ${destinationName}`}</p>
                         <p>{`${arrDate.getDate()} ${months[arrDate.getMonth()]} ${arrDate.getFullYear()}, ${days[arrDate.getDay()]}`}</p>
                     </div>

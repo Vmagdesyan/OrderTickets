@@ -1,3 +1,8 @@
+.InformationAboutFlight {
+  display: flex;
+  margin-top: 25px;
+  margin-left: 15px;
+}
 .timeForFlight {
     width: 75.94px;
     height: 26px;
@@ -26,7 +31,8 @@
     text-transform: none;
     letter-spacing: 0px;
   }
-  #blockForStops {
+  .blockForStops {
+    align-items: center;
     width: 68px;
     height: 13px;
     color: #8b9497;
@@ -40,7 +46,23 @@
     text-transform: none;
     letter-spacing: 0px;
   }
-  #lineForStops {
+  .divForStops {
+    display: flex;
+    flex-direction: column;
+    align-items: center
+  }
+  .divForLine {
+    display: flex;
+    align-items: center;
+  }
+  .divForImg {
+    margin-top: 3px;
+    margin-left: 3px;
+  }
+  .divForDateAndTime {
+    margin-left: 10px;
+  }
+  .lineForStops {
     border-radius: 0;
     width: 96px;
     height: 1px;

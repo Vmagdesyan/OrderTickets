@@ -17,15 +17,28 @@ class FlightTable extends Component {
       <div className="FlightTable">
         { 
           listWithFlights
-            .filter((item) => checkedStops.includes(-1) ? true : checkedStops.includes(item.stops))
+            .filter((item) => checkedStops.indexOf(-1) !== -1 ? true : checkedStops.indexOf(item.stops) !== -1)
             .sort((a, b) => a.stops > b.stops ? 1 : (a.stops === b.stops) ? 0 : -1)
             .sort((a, b) => a.price > b.price ? 1 : (a.price === b.price) ? 0 : -1)
             .map((item, index) => (
             <div
               key={index + 'table'}
+              className='tableForTickets'
             >
-              <div id='logo'>
-                <img  src={LogoNormal} alt='Логотип'/>
+              <div>
+                <div id='logo'>
+                  <img  src={LogoNormal} alt='Логотип'/>
+                </div>
+                
+                <div>
+                  <Button 
+                    className='buttonForBuy'
+                    idText='textInButton' 
+                  >
+                    Купить за {String((item.price * currencyMultiplier).toFixed(0)).replace(/(\d)(?=(\d{3})+([^\d]|$))/g, '$1 ')}
+                    {currency === 'RUB' ? ' ₽' : ( currency === 'EUR' ? ' €' : ' $')} 
+                  </Button>
+                </div>
               </div>
               <InformationAboutFlight
                 origin={item.origin}
@@ -37,21 +50,7 @@ class FlightTable extends Component {
                 arrivalDate={item.arrival_date}
                 arrivalTime={item.arrival_time}
                 stops={item.stops}
-                classForTime='timeForFlight'
-                classForInfAboutDate='dateForFlight'
-                idForStops='blockForStops'
-                idForLine='lineForStops'
               />
-              <div>
-                <Button 
-                  id='buttonForBuy'
-                  idText='textInButton' 
-                >
-                  Купить за {String((item.price * currencyMultiplier).toFixed(0)).replace(/(\d)(?=(\d{3})+([^\d]|$))/g, '$1 ')}
-                  {currency === 'RUB' ? ' ₽' : ( currency === 'EUR' ? ' €' : ' $')} 
-                </Button>
-              </div>
-
             </div>
           ))
         }

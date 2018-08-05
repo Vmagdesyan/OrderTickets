@@ -17,12 +17,10 @@ export default class BlockForChangeCurrencyAndStops extends Component {
     render(){
         const {
             allCurrency,
-            radioButtonClass,
             currCurrency,
             changeCurrency,
             maxStops,
-            checkedStops,
-            checkBoxButtonClass
+            checkedStops
         } = this.props;
         return(
             <div id='filterCurrency'>
@@ -37,7 +35,7 @@ export default class BlockForChangeCurrencyAndStops extends Component {
                                     type='radio'
                                     name='currency'
                                     value={item}
-                                    className={radioButtonClass}
+                                    className='buttonForCurrency'
                                     id={`radio-${index}`}
                                     checked={currCurrency === item}
                                     onChange={() => { changeCurrency(item) }}
@@ -53,9 +51,9 @@ export default class BlockForChangeCurrencyAndStops extends Component {
                         type='checkbox'
                         name='stops'
                         value={-1}
-                        className={checkBoxButtonClass}
+                        className='buttonForStops'
                         id={`checkbox-all`}
-                        checked={checkedStops.includes(-1)}
+                        checked={checkedStops.indexOf(-1) !== -1}
                         onChange={this.changeStopsFromForm}
                     />
                     <label htmlFor={`checkbox-all`}>Все</label>
@@ -67,9 +65,9 @@ export default class BlockForChangeCurrencyAndStops extends Component {
                                 type='checkbox'
                                 name='stops'
                                 value={i}
-                                className={checkBoxButtonClass}
+                                className='buttonForStops'
                                 id={`checkbox-${i}`}
-                                checked={checkedStops.includes(i)}
+                                checked={checkedStops.indexOf(i) !== -1}
                                 onChange={this.changeStopsFromForm}
                             />
                             <label htmlFor={`checkbox-${i}`}>{this.getStops(i)}</label>
