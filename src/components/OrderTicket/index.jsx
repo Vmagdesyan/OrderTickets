@@ -12,8 +12,8 @@ import './index.css';
 
 export const OrderTicket = () => {
   const [currency, setCurrency] = useState('RUB');
-  const { tickets } = data;
   const [checkedStops, setCheckedStop] = useState(ALL_STOP);
+  const { tickets } = data;
 
   const getCurrencyMultiplier = () => {
     switch (currency) {
